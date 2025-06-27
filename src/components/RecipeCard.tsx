@@ -41,20 +41,22 @@ export default function RecipeCard({ recipe, onSelect }: RecipeCardProps) {
         <div>
           <span className="font-medium">Prep Steps:</span>
           <span className="ml-2 text-gray-600">
-            {recipe.prepSteps.length} items
+            {recipe.prep.length} items
           </span>
         </div>
         <div>
           <span className="font-medium">Cook Steps:</span>
           <span className="ml-2 text-gray-600">
-            {recipe.cookSteps.length} items
+            {recipe.cook.length} items
           </span>
         </div>
       </div>
 
-      <div className="mt-4 text-sm text-gray-500">
-        Serves {recipe.servings} people
-      </div>
+      {recipe.servings && (
+        <div className="mt-4 text-sm text-gray-500">
+          Serves {recipe.servings} people
+        </div>
+      )}
     </motion.div>
   )
 } 

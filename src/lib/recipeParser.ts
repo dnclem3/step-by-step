@@ -39,6 +39,8 @@ export interface CookStep {
 export interface Recipe {
   title: string
   sourceUrl: string | null
+  totalTime: number
+  servings: number
   prep: PrepStep[]
   cook: CookStep[]
 }
