@@ -15,11 +15,17 @@ export interface Step {
   instruction: string
   ingredients: {
     name: string
-    quantity: string
+    amount: string
+    unit: string
+    notes?: string
   }[]
   time: string | null
   method: string
   icon: string
+  timer?: {
+    duration: number
+    label: string
+  }
 }
 
 export interface CookStep {
