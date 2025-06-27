@@ -1,3 +1,5 @@
+import { JSDOM } from 'jsdom'
+
 export const OPENAI_API_KEY = process.env.OPENAI_API_KEY as string
 
 if (!OPENAI_API_KEY) {
@@ -142,18 +144,4 @@ You will receive a recipe that includes a title, ingredients, and instructions i
       "icon": "🔥"
     }
   ]
-}`
-
-function extractRecipeContent(html: string): string {
-  const dom = new JSDOM(html)
-  const document = dom.window.document
-
-  // Remove script, style, and noscript tags for cleaner output
-  document.querySelectorAll('script, style, noscript').forEach(el => el.remove())
-
-  // Get all visible text content from the page
-  const textContent = document.body.textContent || ''
-
-  // Return the full cleaned text content
-  return textContent.trim()
-} 
+}` 

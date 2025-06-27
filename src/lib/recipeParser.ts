@@ -11,23 +11,6 @@ export interface CookIngredient {
   quantity: string
 }
 
-export interface Step {
-  instruction: string
-  ingredients: {
-    name: string
-    amount: string
-    unit: string
-    notes?: string
-  }[]
-  time: string | null
-  method: string
-  icon: string
-  timer?: {
-    duration: number
-    label: string
-  }
-}
-
 export interface CookStep {
   instruction: string
   ingredients: CookIngredient[]
@@ -39,8 +22,6 @@ export interface CookStep {
 export interface Recipe {
   title: string
   sourceUrl: string | null
-  totalTime: number
-  servings: number
   prep: PrepStep[]
   cook: CookStep[]
 }
